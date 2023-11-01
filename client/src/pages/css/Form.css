@@ -1,0 +1,18 @@
+.form-group {
+    padding: 1rem;
+}
+
+.form-container {
+    padding: 1rem;
+    height: 60vh;
+    max-height: 700px;
+    width: 60vw;
+    margin: 2.5rem auto;
+    background-color: #0F0402;
+    box-shadow: 1rem 2rem 1rem #060201;
+    border-radius: 1rem;
+}
+
+.form-file-container {
+    margin: 2rem auto 2rem;
+}

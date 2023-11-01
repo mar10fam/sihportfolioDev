@@ -11,10 +11,7 @@ const app = express();
 PORT = process.env.PORT || 3009;
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://shiraishorizon.com',
-    credentials: true
-}));
+app.use(cors());
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));

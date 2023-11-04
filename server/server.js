@@ -11,7 +11,10 @@ const app = express();
 PORT = process.env.PORT || 3009;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,16 +22,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     key: "userId",
     secret: "secret",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: {
-        secure: true,
-        sameSite: 'None',
         expires: 1000 * 60 * 60 * 24
     }
 }));
 
-app.set('trust proxy', 1);
 
 const navRoutes = require('./routes/NavbarRoutes');
 const loginRoutes = require('./routes/LoginRoutes');

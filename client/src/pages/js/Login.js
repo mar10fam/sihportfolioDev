@@ -60,13 +60,13 @@ const Login = () => {
   Axios.defaults.withCredentials = true;
   const login = (event) => {
     event.preventDefault();
-    Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/login", {
+    Axios.post("http://localhost:3009/login", {
       username,
       password
     }).then((res) => {
       console.log("Server Response: ", res);
       handleShow(res.data);
-      Axios.get("https://sihportfolio-247b71a20dfc.herokuapp.com/login/getLogin").then((response) => {
+      Axios.get("http://localhost:3009/login/getLogin").then((response) => {
       console.log(response);
       if(response.data.loggedIn === true) {
         setLoggedIn(true);
@@ -84,7 +84,7 @@ const Login = () => {
       setFormMessage("Please do not leave username or password blank"); 
       setFormShow(true);
     } else {
-      Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/login/newadmin", { 
+      Axios.post("http://localhost:3009/login/newadmin", { 
         registerUser, 
         registerPw 
       }).then((res) => { 

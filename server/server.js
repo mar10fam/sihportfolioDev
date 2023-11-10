@@ -35,12 +35,14 @@ const loginRoutes = require('./routes/LoginRoutes');
 const formRoutes = require('./routes/FormRoutes');
 const portfolioRoutes = require('./routes/PortfolioRoutes');
 const viewArtRoutes = require('./routes/viewArtRoutes');
+const artRoutes = require('./routes/ArtRoutes.js');
 
 app.use('/logout', navRoutes);
 app.use('/login', loginRoutes);
 app.use('/form', formRoutes);
 app.use('/portfolio', portfolioRoutes);
 app.use('/update', viewArtRoutes);
+app.use('/art', artRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -24,7 +24,7 @@ const Form = () => {
   Axios.defaults.withCredentials = true;
   const submit = async (event) => {
     event.preventDefault();
-
+    navigate('/');
     try {
       const artData = new FormData();
       artData.append('art', art);
@@ -47,7 +47,7 @@ const Form = () => {
       });
       console.log("Server Response: ", submitForm);
 
-      navigate('/');
+      
     } catch(err) {
       console.error(err);
     }
